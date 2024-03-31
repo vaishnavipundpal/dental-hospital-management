@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_appointment" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7e9bf339-4ebc-4d18-a6d9-c1c9395766fb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     user_addappointment_tbl.`id` AS user_addappointment_tbl_id,
+     user_addappointment_tbl.`patname` AS user_addappointment_tbl_patname,
+     user_addappointment_tbl.`patcontact` AS user_addappointment_tbl_patcontact,
+     user_addappointment_tbl.`pataddress` AS user_addappointment_tbl_pataddress,
+     user_addappointment_tbl.`appdate` AS user_addappointment_tbl_appdate,
+     user_addappointment_tbl.`email` AS user_addappointment_tbl_email
+FROM
+     `user_addappointment_tbl` user_addappointment_tbl]]>
+	</queryString>
+	<field name="user_addappointment_tbl_id" class="java.lang.Integer"/>
+	<field name="user_addappointment_tbl_patname" class="java.lang.String"/>
+	<field name="user_addappointment_tbl_patcontact" class="java.lang.Long"/>
+	<field name="user_addappointment_tbl_pataddress" class="java.lang.String"/>
+	<field name="user_addappointment_tbl_appdate" class="java.sql.Date"/>
+	<field name="user_addappointment_tbl_email" class="java.lang.String"/>
+	<group name="user_addappointment_tbl_id">
+		<groupExpression><![CDATA[$F{user_addappointment_tbl_id}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#990099" uuid="01e6f040-e780-4015-b088-e644c9100dd2"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{user_addappointment_tbl_id}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="d7fb4747-e6e6-4528-adeb-1aa8da5de9bd"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="ad0a9355-bd5c-42bf-82ca-d19d25ebaf78"/>
+				<imageExpression><![CDATA["leaf_banner_violet.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="5161a0da-c75f-4bf5-8f0e-988ecd6b11a8"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Appointment Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="46" width="200" height="22" uuid="3b268c80-ba29-453b-8e11-57ef8b32e2cb"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Dental Hospital]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="c576e975-fb7a-4756-aad9-d77fafd5697f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="111" height="15" uuid="08bf2b06-f3ce-42a6-b9d9-95ebe55e6fd1"/>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="111" y="19" width="111" height="15" uuid="67f1c0a7-d807-430a-b6aa-9e38434dc69a"/>
+				<text><![CDATA[Contact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="197" y="19" width="111" height="15" uuid="8073b3f6-9f58-4087-aeea-7240e435338d"/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="275" y="19" width="111" height="15" uuid="72e841c9-7de8-4ace-86d9-6a4f97f2e7c2"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="401" y="19" width="152" height="15" uuid="0bbcd234-b120-4544-9121-d34ddcfea75e"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="66c4e30a-09b2-452b-9134-ba4bb9a5d5a6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="111" height="15" uuid="b8810390-791d-4487-a6cb-44147a77f370"/>
+				<textFieldExpression><![CDATA[$F{user_addappointment_tbl_patname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="111" y="0" width="111" height="15" uuid="b6b2a824-5591-485c-9583-14c2e344584c"/>
+				<textFieldExpression><![CDATA[$F{user_addappointment_tbl_patcontact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="197" y="0" width="111" height="15" uuid="b667762e-a417-46d9-a446-cd364f98fef7"/>
+				<textFieldExpression><![CDATA[$F{user_addappointment_tbl_pataddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="275" y="0" width="111" height="15" uuid="4b219ab4-39e9-4253-a2cc-efd4506c9479"/>
+				<textFieldExpression><![CDATA[$F{user_addappointment_tbl_appdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="401" y="0" width="152" height="15" uuid="243f8f30-daf1-455a-8bec-10d50fa5f66b"/>
+				<textFieldExpression><![CDATA[$F{user_addappointment_tbl_email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7fd96108-ef05-4f8a-a884-a07f4cfc8515"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="25857f06-a5ef-4689-bb1f-7bc9205a5b59"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="8129fe36-7fab-47c7-a158-3b5b7bf547ec"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="cec42381-88fd-471f-9d78-38921a91f75a"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

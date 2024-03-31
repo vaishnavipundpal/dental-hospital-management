@@ -1,0 +1,80 @@
+create database dental_hospital;
+use dental_hospital;
+create table admin_signup_tbl
+(
+id int primary key auto_increment,
+aname varchar(50),
+address varchar(200),
+contact bigint(10),
+email varchar(50),
+apassword varchar(10)
+);
+create table admin_addhospinfo_tbl
+(
+id int primary key auto_increment,
+hname varchar(50),
+address varchar(50),
+contact bigint(10),
+image varchar(500),
+email varchar(50),
+ownername varchar(50)
+);
+create table admin_addserice_tbl
+(
+id int primary key auto_increment,
+sername varchar(50),
+serimage varchar(500),
+serinformation varchar(50)
+);
+create table admin_adddoctor_tbl
+(
+id int primary key auto_increment,
+docname varchar(50),
+docaddress varchar(50),
+doccontact bigint(10),
+docemail varchar(50),
+docspl varchar(50),
+docimage varchar(500)
+);
+create table admin_addtreatment_tbl
+(
+id int primary key auto_increment,
+tretname varchar(50),
+tretinfo varchar(50),
+tretdocname varchar(50)
+);
+create table admin_addtest_tbl
+(
+id int primary key auto_increment,
+patname varchar(50),
+patcontact bigint(10),
+pataddress varchar(50),
+testresult varchar(50)
+);
+create table admin_addprescription_tbl
+(
+id int primary key auto_increment,
+patname varchar(50),
+patcontact bigint(10),
+patage int,
+predate date
+);
+create table user_signup_tbl
+(
+id int primary key auto_increment,
+uname varchar(50),
+address varchar(200),
+contact bigint(10),
+email varchar(50),
+upassword varchar(10)
+);
+create table user_addappointment_tbl
+(
+id int primary key auto_increment,
+patname varchar(50),
+pataddress varchar(50),
+patcontact bigint(10),
+patage int,
+appdate date,
+apptime time
+);

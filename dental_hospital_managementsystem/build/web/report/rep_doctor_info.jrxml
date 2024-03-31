@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_doctor_info" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="412709a7-766c-4ad4-84df-fdcd4c2006ef">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     admin_adddoctor_tbl.`id` AS admin_adddoctor_tbl_id,
+     admin_adddoctor_tbl.`docname` AS admin_adddoctor_tbl_docname,
+     admin_adddoctor_tbl.`docaddress` AS admin_adddoctor_tbl_docaddress,
+     admin_adddoctor_tbl.`doccontact` AS admin_adddoctor_tbl_doccontact,
+     admin_adddoctor_tbl.`docemail` AS admin_adddoctor_tbl_docemail,
+     admin_adddoctor_tbl.`docspl` AS admin_adddoctor_tbl_docspl,
+     admin_adddoctor_tbl.`docimage` AS admin_adddoctor_tbl_docimage
+FROM
+     `admin_adddoctor_tbl` admin_adddoctor_tbl]]>
+	</queryString>
+	<field name="admin_adddoctor_tbl_id" class="java.lang.Integer"/>
+	<field name="admin_adddoctor_tbl_docname" class="java.lang.String"/>
+	<field name="admin_adddoctor_tbl_docaddress" class="java.lang.String"/>
+	<field name="admin_adddoctor_tbl_doccontact" class="java.lang.Long"/>
+	<field name="admin_adddoctor_tbl_docemail" class="java.lang.String"/>
+	<field name="admin_adddoctor_tbl_docspl" class="java.lang.String"/>
+	<field name="admin_adddoctor_tbl_docimage" class="java.lang.String"/>
+	<group name="admin_adddoctor_tbl_id">
+		<groupExpression><![CDATA[$F{admin_adddoctor_tbl_id}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#990099" uuid="30d3b729-1c37-436a-8ff1-bcf6db16c2bb"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{admin_adddoctor_tbl_id}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="40ba0b77-710f-40d9-98b5-8ca91cd95da1"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="e4bc1118-83b6-4e84-b703-6bbb382e7824"/>
+				<imageExpression><![CDATA["leaf_banner_violet.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="285ee08a-3393-40e5-b1aa-937b38a820a5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Doctor Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="46" width="200" height="22" uuid="20361544-58c2-41db-9e98-894c324176a3"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Dental Hospital]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="c1664b84-297b-4967-a8cb-c3d3ee6827d8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="92" height="15" uuid="6349af55-550e-4111-9865-779760d839c0"/>
+				<text><![CDATA[Doctor Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="92" y="19" width="92" height="15" uuid="09fa6ea0-7f4a-4d6a-888f-649bc757df6f"/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="160" y="20" width="92" height="15" uuid="014fae3e-6ea6-443c-be88-74e0fb33e713"/>
+				<text><![CDATA[Contact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="241" y="19" width="127" height="15" uuid="d8962ba8-10d4-49a4-8d19-f2b983212fee"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="368" y="19" width="92" height="15" uuid="2adfaf19-eb7c-4dee-b8ec-87d1e86abccb"/>
+				<text><![CDATA[Specialization]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="460" y="19" width="95" height="15" uuid="25a9cfab-d0c6-4caf-bec6-784d49aa272a"/>
+				<text><![CDATA[Image]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="71e46351-e30b-46b7-aa28-571f2aacc344"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="92" height="15" uuid="5780b104-7819-4ce7-ba69-fe78ce09f715"/>
+				<textFieldExpression><![CDATA[$F{admin_adddoctor_tbl_docname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="92" y="0" width="92" height="15" uuid="d042fe93-ef4c-441b-97b3-50d53bdbe779"/>
+				<textFieldExpression><![CDATA[$F{admin_adddoctor_tbl_docaddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="160" y="1" width="92" height="15" uuid="25186406-4a15-4318-9010-0c87bc9ca8c5"/>
+				<textFieldExpression><![CDATA[$F{admin_adddoctor_tbl_doccontact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="241" y="0" width="127" height="15" uuid="65e370ef-d256-4f7a-ae18-be1115de80c6"/>
+				<textFieldExpression><![CDATA[$F{admin_adddoctor_tbl_docemail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="368" y="0" width="92" height="15" uuid="282d58d4-be95-4180-bab9-0202893f475e"/>
+				<textFieldExpression><![CDATA[$F{admin_adddoctor_tbl_docspl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="460" y="0" width="95" height="15" uuid="dc6a5a04-36b8-4de7-ba8a-39e8b8acdae5"/>
+				<textFieldExpression><![CDATA[$F{admin_adddoctor_tbl_docimage}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="678d1a63-c70f-42a1-85d0-4996265f5230"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="9effde78-86a1-4439-a79c-bf44247823fa"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="7c4cf4b7-2546-4f54-8c4e-21645e41a1ed"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="92ac9202-2f8a-4ad2-90fa-41a80439248f"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

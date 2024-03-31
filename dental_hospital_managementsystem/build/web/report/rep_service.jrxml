@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_service" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dacea23f-7896-4e33-af02-7cd3443de1cb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     admin_addserice_tbl.`id` AS admin_addserice_tbl_id,
+     admin_addserice_tbl.`sername` AS admin_addserice_tbl_sername,
+     admin_addserice_tbl.`serinformation` AS admin_addserice_tbl_serinformation,
+     admin_addserice_tbl.`serchar` AS admin_addserice_tbl_serchar
+FROM
+     `admin_addserice_tbl` admin_addserice_tbl]]>
+	</queryString>
+	<field name="admin_addserice_tbl_id" class="java.lang.Integer"/>
+	<field name="admin_addserice_tbl_sername" class="java.lang.String"/>
+	<field name="admin_addserice_tbl_serinformation" class="java.lang.String"/>
+	<field name="admin_addserice_tbl_serchar" class="java.lang.Long"/>
+	<group name="admin_addserice_tbl_id">
+		<groupExpression><![CDATA[$F{admin_addserice_tbl_id}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#990099" uuid="e53fabde-cd25-4442-86bd-0505fedc9b26"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{admin_addserice_tbl_id}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="181dc976-cad3-4b8b-82b7-9e7e5c396ea9"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="b0c23b08-5ef4-4932-8904-4ccdf60f26b9"/>
+				<imageExpression><![CDATA["leaf_banner_violet.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="4294790d-2a0f-406d-9c1e-2e2b7b14e608"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Service Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="46" width="200" height="22" uuid="99575526-59bb-4d78-b765-c9bfb29d2010"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Dental]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="e5ea3807-23ad-45b2-85f1-565578dc0ca2"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="185" height="15" uuid="f1a291e2-593b-4b71-aad0-38576f6ab408"/>
+				<text><![CDATA[Service Name ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="19" width="185" height="15" uuid="06c5ce64-5633-45f0-9f79-ead0c4f37aed"/>
+				<text><![CDATA[Duration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="19" width="185" height="15" uuid="86661421-90a8-4482-aa5a-3b56255bf709"/>
+				<text><![CDATA[admin_addserice_tbl_serchar]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="36c58503-e6dc-454a-94ab-50c2d73b47dc"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="185" height="15" uuid="6fdb7c8a-d267-4d8f-bce9-4ac0af1f1f39"/>
+				<textFieldExpression><![CDATA[$F{admin_addserice_tbl_sername}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="185" height="15" uuid="1a0adf52-bfd1-46ec-9d48-7cb3b79ebd8a"/>
+				<textFieldExpression><![CDATA[$F{admin_addserice_tbl_serinformation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="370" y="0" width="185" height="15" uuid="edb68e48-a22e-4737-b9b7-753117e2c205"/>
+				<textFieldExpression><![CDATA[$F{admin_addserice_tbl_serchar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="f8335739-0f6c-4888-b4b1-73115aabbc19"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="09bfcb21-f019-49f3-a757-6e77021e40c0"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="5ec7053d-8aa1-419b-911c-112fb5007ee7"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="f13ceb76-0359-43fe-a88f-c78b58035821"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

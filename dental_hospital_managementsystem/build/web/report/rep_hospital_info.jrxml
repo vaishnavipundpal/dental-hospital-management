@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_hospital_info" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6ce9ddb5-eb2f-4b0b-95c0-cc2973f2b51e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     admin_addhospinfo_tbl.`id` AS admin_addhospinfo_tbl_id,
+     admin_addhospinfo_tbl.`hname` AS admin_addhospinfo_tbl_hname,
+     admin_addhospinfo_tbl.`address` AS admin_addhospinfo_tbl_address,
+     admin_addhospinfo_tbl.`contact` AS admin_addhospinfo_tbl_contact,
+     admin_addhospinfo_tbl.`image` AS admin_addhospinfo_tbl_image,
+     admin_addhospinfo_tbl.`email` AS admin_addhospinfo_tbl_email,
+     admin_addhospinfo_tbl.`ownername` AS admin_addhospinfo_tbl_ownername
+FROM
+     `admin_addhospinfo_tbl` admin_addhospinfo_tbl]]>
+	</queryString>
+	<field name="admin_addhospinfo_tbl_id" class="java.lang.Integer"/>
+	<field name="admin_addhospinfo_tbl_hname" class="java.lang.String"/>
+	<field name="admin_addhospinfo_tbl_address" class="java.lang.String"/>
+	<field name="admin_addhospinfo_tbl_contact" class="java.lang.Long"/>
+	<field name="admin_addhospinfo_tbl_image" class="java.lang.String"/>
+	<field name="admin_addhospinfo_tbl_email" class="java.lang.String"/>
+	<field name="admin_addhospinfo_tbl_ownername" class="java.lang.String"/>
+	<group name="admin_addhospinfo_tbl_id">
+		<groupExpression><![CDATA[$F{admin_addhospinfo_tbl_id}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#990099" uuid="84e192a4-1341-493d-856a-dbe1ad9496a0"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{admin_addhospinfo_tbl_id}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="fbcb5c82-d5b9-44d7-b3a4-5c6b4684ec90"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="30eef33c-b8f8-426e-beea-f4b0c2996a64"/>
+				<imageExpression><![CDATA["leaf_banner_violet.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="59c2eee4-e1d2-4c99-b4cf-065d7657632f"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Hospital report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="46" width="200" height="22" uuid="e73e69e5-752f-411a-b15f-f7b7ab7853e7"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[dental hospital]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="10f0912e-b7b3-4438-a2fa-69aca7d4b9e4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="92" height="15" uuid="8dfe64c4-a529-42f7-99e1-8ebc88d09f08"/>
+				<text><![CDATA[Hospital Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="92" y="19" width="92" height="15" uuid="8323e74c-222e-424d-a1cd-cbcb46451590"/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="184" y="19" width="92" height="15" uuid="f4f5a236-0654-4897-aaad-9094d3ec8120"/>
+				<text><![CDATA[Contact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="317" y="19" width="116" height="15" uuid="5ef1b39c-2fb1-40cf-be3f-5dbc92567a08"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="433" y="19" width="119" height="15" uuid="3002199f-cbdb-4f25-8fdb-4942a86bdfb7"/>
+				<text><![CDATA[Owner Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="bfcb6b51-b05e-4b8f-bfb0-6c683a549e73"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="92" height="15" uuid="8ec5162f-cad4-441f-8665-591d3abcd748"/>
+				<textFieldExpression><![CDATA[$F{admin_addhospinfo_tbl_hname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="92" y="0" width="92" height="15" uuid="3aff4abe-16b8-4881-8353-ee7895618b88"/>
+				<textFieldExpression><![CDATA[$F{admin_addhospinfo_tbl_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="184" y="0" width="92" height="15" uuid="98b100b5-3fc4-43b2-a249-c9d8d0e5a3b8"/>
+				<textFieldExpression><![CDATA[$F{admin_addhospinfo_tbl_contact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="317" y="0" width="116" height="26" uuid="cb8e4ddb-3505-465b-a957-f782b336ab3a"/>
+				<textFieldExpression><![CDATA[$F{admin_addhospinfo_tbl_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="433" y="0" width="119" height="26" uuid="4e3987fd-acfc-4a1f-ad48-3a3bfdc40488"/>
+				<textFieldExpression><![CDATA[$F{admin_addhospinfo_tbl_ownername}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="0095ac55-698e-485c-86b5-615db2301948"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="bf1b3091-70d3-439b-a430-ec5fc7b99b40"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="92d4b278-cb72-4e83-8557-7c8dd89609f8"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="573dc626-a2c7-4e92-a308-ded0ffc925e3"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
